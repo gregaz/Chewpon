@@ -1,0 +1,825 @@
+
+    <!DOCTYPE html PUBLIC "-//WAPFORUM//DTD XHTML Mobile 1.2//EN"
+    "http://www.openmobilealliance.org/tech/DTD/xhtml-mobile12.dtd">
+    <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+
+<head>
+	
+	<title>Publix - Weekly Ad</title>
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+	<meta name="CODE_LANGUAGE" content="C#" />
+	<meta name="vs_defaultClientScript" content="JavaScript"  />
+	<meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5" />
+	<meta name="robots" content="index,follow"/>
+    <meta name="keywords" content="Publix, weekly ad, mobile, WAP, circulars, deals, sales, specials, promotions"/>
+    <meta name="description" content="Find weekly deals, sales, specials and promotions at Publix"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=1"/>
+    
+    <meta name="viewport" content="width=device-width; initial-scale=1.0;" />
+
+	<link rel="apple-touch-icon" href="images/publixmobile/iphone/customIcon.png"/>
+	<link rel="stylesheet" href="styles/publix_mobile.css" type="text/css" media="screen" />
+	<link rel="stylesheet" title="Mobile Styles" href="styles/publix_mobile_3rdParty.css" />
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.6.2.min.js"></script>
+	
+	<script type="text/javascript">
+	    
+	     window.onload = function(){ if( document.getElementById("CityStateZip") != null) { document.getElementById("CityStateZip").focus(); } };
+	</script>
+	<script type="text/javascript" src="scripts/jsfunctions.js"></script>
+	<script type="text/javascript" src="scripts/publix/mobile.js"></script>
+	
+	<script type="text/javascript">
+	
+	/* <![CDATA[ */
+	    $('link[@rel*=stylesheet][title]').each(function(i) {
+		    var browser = cms_getCookie("browserstyle","");
+		    if (this.getAttribute('title') == "iPhone Styles" && browser != "iPhone" && !navigator.userAgent.match(/iPhone/i)) {
+			    this.disabled = true;
+		    } else {
+		        this.disabled = false;
+		    }
+		});
+	/* ]]> */
+	    
+     //Blackberry Sniffer
+        var deviceBB = "blackberry";
+
+        //Initialize our user agent string to lower case.
+        var uagent = navigator.userAgent.toLowerCase();
+        //**************************
+        // Detects if the current browser is a BlackBerry of some sort.
+        function DetectBlackBerry()
+        {
+            if (uagent.search(deviceBB) > -1) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+            
+	    window.onload = function(){  
+            if( !navigator.userAgent.match(/iPhone/i) ) {
+                $("link[title='iPhone Styles']").remove();
+            }
+            
+            //Hide the body until after we can remove the iPhone styles
+            $("body").show();
+            
+            if( DetectBlackBerry() ) {
+                $("link[title='iPhone Styles']").remove();
+            
+                var searchField = document.getElementById("gnsearchinput");
+                if(searchField != null) {
+                    searchField.onclick=function(){
+                        this.value="";
+                    };
+                    searchField.style.border="none";
+                    searchField.style.backgroundImage="url('./images/publixmobile/searchbox.gif')";
+                    searchField.style.setProperty("background-position","0 -1px","!important");
+                    searchField.style.backgroundRepeat="no-repeat";
+                    searchField.style.setProperty("font-size","13px","!important");
+                    searchField.style.setProperty("padding-top","2px","!important");
+                }
+                
+                var zipEntryField = document.getElementById("CityStateZip");
+                if(zipEntryField != null) {
+                    zipEntryField.style.border="none";
+                    zipEntryField.style.backgroundImage="url('./images/publixmobile/searchbox.gif')";
+                    zipEntryField.style.setProperty("background-position","0 -1px","!important");
+                    zipEntryField.style.backgroundRepeat="no-repeat";
+                    zipEntryField.style.setProperty("font-size","13px","!important");
+                    zipEntryField.style.setProperty("padding-top","2px","!important");
+                }
+            }
+	        
+	        //iPhone Sniffer     
+	        if(navigator.userAgent.match(/iPhone/i)){
+	            
+	            if( cms_getCookie("browserstyle","") != "iPhone" );
+	                $("link[rel='alternate stylesheet']").attr("rel","stylesheet");
+	                cms_setCookie("browserstyle","iPhone");
+	           
+                //Screen Orientation
+                function checkOrientation() {
+                    switch(window.orientation){
+                        case 0:
+                            //handle portrait actions
+                            $("body").addClass("portraitdisplay");
+                        break;
+                        case -90:
+                        case 90:
+                            // handle landscape actions
+                            $("body").addClass("landscapedisplay");
+                        break;
+                    }
+                }
+                
+                addEventListener("orientationchange", checkOrientation);
+                checkOrientation();
+                
+                //Change Store Detail Links to iPhone style
+                var curVal = $("#storedetails").attr("href");
+                if(curVal != null)
+                {
+                    curVal = curVal.split("&amp;");
+                    $("#storedetails").attr("href", curVal[0] + "&amp;design=iphone"); 
+                }
+                
+            }
+	        
+        };
+	</script>
+	
+	
+	
+	
+	 <script type="text/javascript">
+	     $(document).ready(function () {
+
+	         /* Top Nav Pull-Down Menu */
+	         $(".openMENU").click(function () {
+	             $("#transparentDummy").show();
+	         });
+	         $(".closeMENU").click(function () {
+	             $("#transparentDummy").hide();
+	         });
+
+	     });
+	</script>
+	
+
+	
+	 <script type="text/javascript">
+		function initScreen() { setTimeout("window.scrollTo(0,1);",100); }
+		function updateOrientation() {
+			initScreen();
+		} 
+    </script>
+    <script type="text/javascript">
+
+        document.cookie = "testcookie=1";
+
+        if (!document.cookie.length) {
+            alert("Please note: cookies are currently disabled on this device.  For this site to function properly, please change your web browser settings to allow cookies.");
+
+        }
+
+        var sl_setDomain = "Y";
+        var commoncampaignID = "";        
+    </script>
+
+
+	
+<script type="text/javascript">
+
+
+    function writeMetaTag(name,content) {
+         var metatag = document.createElement("meta"); 
+            var attr1 = document.createAttribute("name");
+            attr1.value = name;
+            metatag.setAttributeNode(attr1);
+             
+            var attr2 = document.createAttribute("content");
+            attr2.value = content;
+            metatag.setAttributeNode(attr2);
+            
+            var headTag = document.getElementsByTagName("head")[0];
+            headTag.appendChild(metatag);
+    }
+
+        /* <![CDATA[ */
+        
+        writeMetaTag("sDCSID","dcsm3s8uv10000g0zjgmuv8iz_8x2u");
+        
+        if(cms_getCookie("SLHCookie","DMAName", "") != "" && cms_getQueryString("action", " ").toLowerCase() != "entryflash")
+	        writeMetaTag("DCSext.sl_dma",cms_getCookie('SLHCookie','DMAName'));
+      
+        /* ]]> */
+    	
+        
+        /* <![CDATA[ */
+	        writeMetaTag("DCSext.sl_storename","Publix+at+Mt.+Zion 2035 Mount Zion Rd Morrow, GA 30260-3313");
+        /* ]]> */	
+        
+        
+    /* <![CDATA[ */
+    if(cms_getQueryString("action", " ").toLowerCase() == "printcoupon"){
+        writeMetaTag("DCSext.sl_storeref","00461");
+    }
+    var strAdRef = "";
+
+    if ((cms_getCookie ("Prefs", "adref") != "") &&(cms_getCookie ("Prefs", "WT") != "1"))
+        strAdRef = cms_getCookie ("Prefs", "adref");
+
+    if(cms_getCookie("Prefs","falsepagereload","") == "" || cms_getCookie("Prefs","falsepagereload","") == "n")
+    {			
+        if (strAdRef != ""){
+            setSubCookie("Prefs", "WT", "1");
+            
+            writeMetaTag("WT.mc_id",strAdRef);       
+        }
+
+	    
+	        writeMetaTag("WT.si_n","listconv");
+	        writeMetaTag("WT.si_p","detail");
+	    	
+    									
+	    var prvZip=cms_getCookie("Prefs","PreviousZip");
+	    var currZip;
+    		
+	    if ((cms_getCookie("SLHCookie","ZipCode5")!=undefined)&&(cms_getCookie("SLHCookie","ZipCode5")!=null)&&(cms_getCookie("SLHCookie","ZipCode5").length>0))
+		    currZip=cms_getCookie("SLHCookie","ZipCode5");
+	    else if((cms_getCookie("SLHCookie","ZipCodeNine")!=undefined)&&(cms_getCookie("SLHCookie","ZipCodeNine")!=null)&& (cms_getCookie("SLHCookie","ZipCodeNine").length>0))
+		    currZip=cms_getCookie("SLHCookie","ZipCodeNine");
+
+	    if((currZip!=undefined)||(prvZip!=undefined))
+	    {	
+		    if(cms_getCookie("Prefs","NewReturn")==undefined || (cms_getCookie("Prefs","History","").indexOf("browsestorelocation|browsestorelocation") < 0 && cms_getCookie("Prefs","History","").indexOf("browsestorelocation|") > -1 )|| (currZip!=prvZip && cms_getQueryString("action", " ").toLowerCase() != "entryflash"))
+		    {
+                setSubCookie("Prefs","NewReturn","Y");
+			    writeMetaTag("DCSext.sl_zipcnt","1");
+			    writeMetaTag("DCSext.sl_zip",currZip);
+		    }
+	    }
+    	
+	    //SET THE PREVIOUSZIP TO THE CURRENT ZIP IF PREFS cookie EXISTS
+	    var cookies=document.cookie;
+	    if (cookies.indexOf("Prefs")!=-1)
+	    {
+		    //set cookie
+		    setSubCookie("Prefs","PreviousZip",currZip);
+	    }								
+    		
+	    
+	        writeMetaTag("WT.pn_sku","-2056601928");
+	    
+	        writeMetaTag("WT.tx_u","1");
+	    
+	        writeMetaTag("WT.tx_e","dv");
+	    
+	        writeMetaTag("WT.cg_s","detail");
+	    
+	        writeMetaTag("DCSext.sl_retailer","publixmobile");
+	    	
+    }
+    setSubCookie("Prefs", "falsepagereload", "n");
+    /* ]]> */
+
+</script>
+</head>
+
+<body id="body_detail">
+
+
+
+
+<!-- START OF SDC Advanced Tracking Code -->
+<!-- Copyright (c) 1996-2005 WebTrends Inc.  All rights reserved. -->
+<!-- V7.5 -->
+<!-- $DateTime: 2005/08/25 15:58:46 $ -->
+<script type="text/javascript"><!--
+window.onload = function(){
+    var gService = true;
+    var gTimeZone = -6;
+    var sDCSID =  "dcsm3s8uv10000g0zjgmuv8iz_8x2u";
+
+    // Code section for Enable First-Party Cookie Tracking
+    function dcsCookie(){
+	    if (typeof(dcsOther)=="function"){
+		    dcsOther();
+	    }
+	    else if (typeof(dcsPlugin)=="function"){
+		    dcsPlugin();
+	    }
+	    else if (typeof(dcsFPC)=="function"){
+		    dcsFPC(gTimeZone);
+	    }
+    }
+    function dcsGetCookie(name){
+	    var pos=document.cookie.indexOf(name+"=");
+	    if (pos!=-1){
+		    var start=pos+name.length+1;
+		    var end=document.cookie.indexOf(";",start);
+		    if (end==-1){
+			    end=document.cookie.length;
+		    }
+		    return unescape(document.cookie.substring(start,end));
+	    }
+	    return null;
+    }
+    function dcsGetCrumb(name,crumb){
+	    var aCookie=dcsGetCookie(name).split(":");
+	    for (var i=0;i<aCookie.length;i++){
+		    var aCrumb=aCookie[i].split("=");
+		    if (crumb==aCrumb[0]){
+			    return aCrumb[1];
+		    }
+	    }
+	    return null;
+    }
+    function dcsGetIdCrumb(name,crumb){
+	    var cookie=dcsGetCookie(name);
+	    var id=cookie.substring(0,cookie.indexOf(":lv="));
+	    var aCrumb=id.split("=");
+	    for (var i=0;i<aCrumb.length;i++){
+		    if (crumb==aCrumb[0]){
+			    return aCrumb[1];
+		    }
+	    }
+	    return null;
+    }
+    function dcsFPC(offset){
+	    if (typeof(offset)=="undefined"){
+		    return;
+	    }
+	    var name=gFpc;
+	    var dCur=new Date();
+	    dCur.setTime(dCur.getTime()+(dCur.getTimezoneOffset()*60000)+(offset*3600000));
+	    var dExp=new Date(dCur.getTime()+315360000000);
+	    var dSes=new Date(dCur.getTime());
+	    if (document.cookie.indexOf(name+"=")!=-1){
+		    var id=dcsGetIdCrumb(name,"id");
+		    var lv=parseInt(dcsGetCrumb(name,"lv"));
+		    var ss=parseInt(dcsGetCrumb(name,"ss"));
+		    if ((id==null)||(id=="null")||isNaN(lv)||isNaN(ss)){
+			    return;
+		    }
+		    WT.co_f=id;
+		    var dLst=new Date(lv);
+		    dSes.setTime(ss);
+		    if ((dCur.getTime()>(dLst.getTime()+1800000))||(dCur.getTime()>(dSes.getTime()+28800000))){
+			    dSes.setTime(dCur.getTime());
+			    WT.vt_f_s="1";
+		    }
+		    if ((dCur.getDay()!=dLst.getDay())||(dCur.getMonth()!=dLst.getMonth())||(dCur.getYear()!=dLst.getYear())){
+			    WT.vt_f_d="1";
+		    }
+	    }
+	    else{
+		    var tmpname=name+"_TMP=";
+		    document.cookie=tmpname+"1";
+		    if (document.cookie.indexOf(tmpname)!=-1){
+			    document.cookie=tmpname+"; expires=Thu, 01-Jan-1970 00:00:01 GMT";
+			    if ((typeof(gWtId)!="undefined")&&(gWtId!="")){
+				    WT.co_f=gWtId;
+			    }
+			    else if ((typeof(gTempWtId)!="undefined")&&(gTempWtId!="")){
+				    WT.co_f=gTempWtId;
+				    WT.vt_f="1";
+			    }
+			    else{
+				    WT.co_f="2";
+				    var cur=dCur.getTime().toString();
+				    for (var i=2;i<=(32-cur.length);i++){
+					    WT.co_f+=Math.floor(Math.random()*16.0).toString(16);
+				    }
+				    WT.co_f+=cur;
+				    WT.vt_f="1";
+			    }
+			    if (typeof(gWtAccountRollup)=="undefined"){
+				    WT.vt_f_a="1";
+			    }
+			    WT.vt_f_s="1";
+			    WT.vt_f_d="1";
+		    }
+		    else{
+			    WT.vt_f="2";
+			    WT.vt_f_a="2";
+			    return;
+		    }
+	    }
+	    WT.co_f=escape(WT.co_f);
+	    WT.vt_sid=WT.co_f+"."+dSes.getTime();
+	    var expiry="; expires="+dExp.toGMTString();
+	    document.cookie=name+"="+"id="+WT.co_f+":lv="+dCur.getTime().toString()+":ss="+dSes.getTime().toString()+expiry+"; path=/"+(((typeof(gFpcDom)!="undefined")&&(gFpcDom!=""))?("; domain="+gFpcDom):(""));
+    }
+
+    // Code section for Use the new first-party cookie generated with this tag.
+    var gFpc="WT_FPC";
+    var gWtId="";
+    var gTempWtId="";
+    var gConvert=true;
+
+    function dcsAdv(){
+	    dcsFunc("dcsET");
+	    dcsFunc("dcsCookie");
+	    dcsFunc("dcsAdSearch");
+    }
+
+    //-->
+</script>
+<!-- END OF SDC Advanced Tracking Code -->
+
+<!-- START OF SmartSource Data Collector TAG -->
+<!-- Copyright (c) 1996-2005 WebTrends Inc.  All rights reserved. -->
+<!-- V7.5 -->
+<!-- $DateTime: 2005/06/29 17:35:36 $ -->
+
+
+<script src="scripts/mobile/tracking.js" type="text/javascript"></script>
+
+
+<!-- END OF SmartSource Data Collector  TAG -->	
+
+
+<div id="bodycontent">
+            
+
+<span id="eventTrackerContainer" class="hidden"></span>
+<script type="text/javascript">
+    
+    function CreateETURLS(){
+        var url = [];
+        
+         url[0] = "http://it.shoplocal.com/it.ashx?" + uid + "|~|" + "1229|~|6|~||~|2500144|~|-2056601928" + "|~|" + escape(Math.random()).replace(".",""); 
+        
+       return url;     
+    }
+</script>
+	    
+    <span id="pixelTrackerContainer" class="hidden"></span>
+        
+    <script type="text/javascript">
+    /* <![CDATA[ */
+        var uid;
+        var eturls;
+        var pturls;
+        var prurls;
+        var totalPixelCounts = 0;
+        var executedPixelCounts = 0;
+        
+        function json_results(obj) {              
+            uid=obj.ResultSet.UID;                               
+            
+            if(cms_getQueryString("action"," ")=="googleadsense"){            
+                return;
+            }
+            
+            eturls = CreateETURLS();
+            pturls = CreatePTURLS();
+            prurls = CreatePRURLS();
+            
+            totalPixelCounts = pturls.length + eturls.length;
+                        
+            DrawTracker(eturls, "et", "eventTrackerContainer");
+            DrawTracker(pturls, "pt", "pixelTrackerContainer");  
+            DrawTracker(prurls, "pr", "pointRollContainer");                        
+        }           
+        
+        function CheckTrackerCounts(){         
+            executedPixelCounts++;            
+            if(totalPixelCounts == executedPixelCounts){
+                try{slRedirect();}catch(e){}
+            }
+        }
+        
+        function DrawTracker(urls, idPrefix, containerId, useInnerHtml){
+            
+            if(urls.pop == null)
+                return;
+
+            var imgs = "";
+            var ptcont = document.createElement("div");
+                ptcont.setAttribute("id","ptcontainer");
+                            
+            for(var i=0; i<urls.length; i++){
+                
+                imgs = document.createElement("img");
+                imgs.setAttribute("alt", " ");
+                imgs.setAttribute("id",idPrefix + i);
+                imgs.setAttribute("src",urls[i]);        
+                //imgs.onload = CheckTrackerCounts();
+                imgs.addEventListener("load", CheckTrackerCounts, false);
+                imgs.addEventListener("error", CheckTrackerCounts, false);
+                ptcont.appendChild(imgs);
+                //imgs += "<img alt=' ' id='" + idPrefix + i + "' src='" + urls[i] + "' style='display:none;' onload='CheckTrackerCounts()' onerror='CheckTrackerCounts()' />";
+            }
+            
+            if(document.getElementById(containerId)!=null){
+                // best method
+                document.getElementById(containerId).appendChild(ptcont);
+            }
+            else if(useInnerHtml==true){
+                // worst method
+                for(var i=0; i<urls.length; i++){
+                    setTimeout("var ptn_" + i + " = new Image(); x.src = '" + urls[i] + "'", 100);
+                }
+            }
+            else{
+                // 2nd best method - but client side add/remove from shopping list can't use this
+                var bodyTag = document.getElementsByTagName("body")[0];
+                bodyTag.appendChild(ptcont);
+            }
+        }
+        
+        function CreatePTURLS(){
+        
+            var url = [];            
+            var path = document.location.pathname;
+            
+            if(path.substring(path.length-1) == "/"){
+                path = "Default.aspx?action=nuep";
+            }
+                                             
+            	            
+                url[0] = "http://ptsc.shoplocal.com/pt" + path + GeneratePTQS() + "&pagecounter=" + GetPageCounter() + "&slhlogon=" + uid + "&siteid=" + cms_getCookie("Prefs", "SiteID") + "&referrer=" + escape(document.referrer) + "&random=" + escape(Math.random());
+	             
+	        
+	        return url;
+        }  
+        function CreatePRURLS(){
+            var url = [];            
+            url[0] = "http://clients.pointroll.com/clients/shoplocal/slcookie.ashx?data=" + uid;
+                                            
+	        return url;
+        }                   
+  
+    // print tracking ...
+		var bolPageWasPrinted = false;
+
+        function obp(){                   
+            for(var i=0; i<pturls.length; i++){
+                try{document.getElementById("pt"+i).src = "http://";}catch(e){}
+            }
+        }
+
+		function oap() {
+		    
+			if(!bolPageWasPrinted) {
+			    var url = [];				
+				var strPage = window.location.pathname;
+								
+				var qs = window.location.search.replace(/"/g,"\"");				
+				qs = qs.replace(/\?/g,"");
+				qs+= (qs.substring(qs.length,1)=="&") ? "" : "&";
+				qs+= ((qs.indexOf("&slhlogon=")>0) ? "" : "slhlogon=" + uid + "&");
+				qs+= ((qs.indexOf("&siteid=")>0) ? "" : "siteid=1229&");
+												
+				strPage = strPage.substring(1, strPage.length);
+				var i = strPage.indexOf('/');
+				if(i > 0) strPage = strPage.substring(i+1, strPage.length);
+								
+                url[0] = "http://ptsc.shoplocal.com/pt/publixmobile/track_print.asp?page="+strPage+"&"+qs;               
+                DrawTracker(url, "ptp", "pixelTrackerContainer");
+				
+				bolPageWasPrinted = true;
+				
+			}
+		}
+		
+		window.onbeforeprint = obp;		
+		window.onafterprint = oap;
+	/* ]]> */   
+	</script>			
+	<script type="text/javascript" src="http://uid.shoplocal.com/uid.aspx?callback=json_results"></script>
+	
+            
+<script type="text/javascript">
+	window.onerror = null
+	document.slh = true;
+	self.slh = true;
+</script>
+
+
+<!-- Survey Component -->
+
+            
+    
+<script>
+ var sl_currStoreID = 2500144;
+</script>
+<div id="header">
+    <h1><a title="Publix Home" href="http://m.publix.com"></a></h1>
+    
+    <div id="pagetitle">
+	        Item Detail
+	    
+    </div>
+</div>
+
+
+<a name="top"></a>
+
+
+	
+	<div id="mainMenuBtnOFFContainer">
+		<a class="openMENU"><div id="mainMenuBtnOFF"></div></a>
+	</div>
+
+		
+	<div id="transparentDummy" class="closeMENU">
+			<div id="mainMenuSlidePanel">
+			<div id="mainMenuBtnONContainer">
+				<a class="closeMENU"><div id="mainMenuBtnON"></div></a>
+			</div>
+			<ul>
+				<li>                      <a href="http://mobilead.publix.com/publixmobile/new_user_entry.aspx?adref=mWeeklyAd">                   Weekly Ad <span class="addArrow"></span></a></li>       
+				<li><a href="http://publix.know-where.com/publix/cgi/index?design=iphone" target="_new">Find a Publix <span class="addArrow"></span></a></li>       
+				<li>                        <a href="http://www.publix.com/m/mypublix/CreateViewDeleteGroceryLists.do">                   My Lists <span class="addArrow"></span></a></li>       
+				<li>                     <a href="http://www.publix.com/m/mypublix/Home.do">                 My Publix <span class="addArrow"></span></a></li>     
+			</ul> 
+		</div> 
+	</div> 
+	
+
+
+
+	
+	<div id="mainContainer">
+
+
+
+
+		                  <a href="http://www.publix.com/m/">            
+        <div id="topLogoDummyLinkContainer"></div></a>
+
+
+
+
+
+	
+	
+	 
+	<div id="mainContentContainer">
+
+    
+    <div class="nav" id="breadcrumb">
+		    <a href="default.aspx?action=browsestorelocation&amp;storeid=2500144" title="Store Search" accesskey="a">Store Search</a>&#62;
+		
+		    
+        		        
+		                <a href="default.aspx?action=entry&amp;storeid=2500144" title="Departments">Depts</a>&#62; <a href="default.aspx?action=browsecategoryl1&amp;storeid=2500144&amp;CatTreeID=5117960&amp;viewmode=0" title="Meat">Meat</a>&#62;
+	                
+		        <span>Detail</span>
+		    </div> 	
+
+    <div class="section" id="contentsection"><div class="nav" id="primnav">
+	<h1>Primary Navigation</h1>
+	<ul>
+	    
+	    <li id="storeinfoframe" class="storedetail">
+	        <h2>Store Information</h2>
+	        
+<div>
+
+    <span class="store-name">Publix at Mt. Zion</span>
+    <h3>Other Options</h3>	
+	    <ul class="simplifiedstoredisplay">
+	        
+		        <li class="store-locslnk">
+		            <span class="store-id">(Store #00461)</span> |
+		            <span class="store-changeloc"><a href="default.aspx?action=storelocationzipentry" accesskey="o" title="Change Location">Change Location</a></span></li>
+	        
+	            <li class="store-detailslnk">
+	                <span class="store-phone">Tel: <a href="tel: 770-472-4000            ">770-472-4000            </a></span> |
+
+	                <span class="store-detaillnk"><a id="storedetails" title="See Store Details" href="http://publix.know-where.com/publix/cgi/site?site=00461&amp;design=iphone">See Store Details</a></span>
+	            </li>
+       
+        </ul>
+	    <div class="clear"></div>
+
+</div>
+<div id="iphoneline"></div>
+	    </li>
+	    
+	</ul>
+	
+</div>
+    <div id="itemnavtop" class="nav itemnav">
+    <a href="#" title="Previous Page" onclick="ReturnFromListing()">Previous Page</a>
+</div>
+		<div class="header contentheader">
+    <h1>Item Detail <span class="accesshidden">Boston Butt Roast </span></h1>
+</div><div class="section contentsection" id="itemdetail">
+    <div>
+	    <div class="product-image">	
+	        <img id="img-2056601928" src="http://akimages.shoplocal.com/dyn_li/200.0.88.0/Retailers/Publix/120919_03_ALL_img_212073280.jpg"  width="124" alt="Boston Butt Roast " />
+	    </div>
+	
+        <div style="float:left; width:140px;">
+	        <div class="product-title">Boston Butt Roast </div>
+	        <div class="product-addinfo"></div>
+	
+	        <div class="product-deal">$1.99 lb</div>
+	        <div class="product-actions">
+
+<div id="detailACTIONS">
+	
+		 <div class="listingslctrl">
+    		 <span id="sl|2500144|-2056601928|"></span>
+	    	 <script type="text/javascript">DrawShoppingListLink("-2056601928", "/publixmobile/Default.aspx?action=addshoppinglist&amp;storeid=2500144&amp;pretailerid=&amp;listingid=-2056601928&amp;offerid=0&amp;catid=&amp;redirect=%2fpublixmobile%2fDefault.aspx%3faction%3ddetail%26storeid%3d2500144%26rapid%3d0%26pagenumber%3d0%26listingid%3d-2056601928%26offerid%3d%26shoppinglist%3dy&amp;ref=%2fpublixmobile%2fDefault.aspx%3faction%3dbrowsecategoryl1%26storeid%3d2500144%26viewmode%3d0%26cattreeid%3d5117960&amp;finalprice=1.9900", "Add to List", "Remove/Edit","","cursor:hand; width:90px;","","", "innerhtml")</script>
+		</div>
+	
+     <a href="javascript:gotoGroceryList();">View Grocery List</a>
+</div>
+    
+	
+	</div>
+        </div>
+        <div style="clear:both;"></div>
+    </div>
+
+	<div class="product-pricequal">SAVE UP TO $1.00 LB</div>
+		
+	<div class="product-desc">Publix Pork, All-Natural, Full-Flavor</div>
+	<div class="product-sku"></div>
+	<div class="product-fineprint"></div>			
+	
+	
+	
+		    <div class="validdate">
+		
+		 Offer valid thru September 26, 2012
+		</div>
+	
+	
+	
+	
+	
+	
+		
+</div>
+		<div id="itemnavbottom" class="nav itemnav">
+    <a href="#" title="Previous Page" onclick="ReturnFromListing()">Previous Page</a>
+</div>
+
+
+
+
+
+	
+	</div>
+
+
+		
+
+
+
+	</div> 
+	
+
+
+
+
+		
+
+		<div id="footerContainer">
+        
+
+			<div id="globalListControlsContainer">
+
+				<div id="homeLogoutControl">
+
+					                        <a href="http://www.publix.com/m/">                    Home</a>&#160;&#160;|&#160;&#160;<a href="javascript:gotoGroceryList();" style="float:right">View Grocery List</a>
+
+				</div>
+
+			</div> 
+
+	
+
+    
+
+			<div class="clear"></div>
+
+			<div id="mainLogoBottom"></div>
+
+			<div class="clear"></div>
+
+	
+
+		
+		<div id="footerContent">
+			2011 © Publix Asset Management Company.<br/>
+			All Rights Reserved.<br/>
+            
+                <a href="http://www.publix.com/m/TermsOfUse.do" target="_new">Terms of Use</a> &amp; <a href="http://www.publix.com/m/PrivacyPolicy.do" target="_new">Privacy Policy</a>
+            
+		</div>
+		
+
+		<div id="footerAffiliates">
+
+			<a href="http://www.youtube.com/publix" target="_new"><div id="YouTubeLogo"></div></a>
+
+			<a href="http://www.facebook.com/publix" target="_new"><div id="FacebookLogo"></div></a>
+
+		</div>
+
+	
+
+		<div class="clear"></div>
+
+
+</div> 
+</div>
+
+    <div id="cmsattribution">
+		Powered by <span><a href="http://www.aboutshoplocal.com" title="ShopLocal">ShopLocal</a>&#160; | &#160;<a href="controls/default_mobile/TermsOfUseContent.html" accesskey="t" title="Terms/Conditions">Terms/Conditions</a></span>
+</div>
+</div>
+</body>
+</html>
+
